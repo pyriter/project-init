@@ -1,0 +1,38 @@
+{
+  "name": "project-init",
+  "version": "1.0.0",
+  "description": "A barebones project",
+  "main": "app.js",
+  "scripts": {
+    "start": "npm run tsc && npm run webpack && npm run webpack:w",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "postinstall": "typings install",
+    "typings": "typings",
+    "webpack": "webpack",
+    "webpack:w": "webpack --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pyriter/project-init.git"
+  },
+  "author": "Phong Vuong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pyriter/project-init/issues"
+  },
+  "homepage": "https://github.com/pyriter/project-init",
+  "dependencies": {
+    "jquery": "^2.2.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "browser-sync-webpack-plugin": "^1.0.1",
+    "css-loader": "^0.23.1",
+    "ts-loader": "^0.8.2",
+    "typescript": "^1.8.10",
+    "typings": "^1.0.4",
+    "webpack": "^1.13.1"
+  }
+}
