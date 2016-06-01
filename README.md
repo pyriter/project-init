@@ -1,4 +1,4 @@
-# Angular2 calculator component
+# Project Init 
 
 #Installation
 npm install
