@@ -2,7 +2,9 @@ import { Component } from "@angular/core";
 
 @Component({
     selector: "main-app",
-    template: `<h1>Empty Application</h1>`
+    template: `
+        <router-outlet></router-outlet>
+    `
 })
 
 export default class AppComponent {
