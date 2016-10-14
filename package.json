@@ -4,14 +4,15 @@
   "description": "A barebones project",
   "main": "app.js",
   "scripts": {
-    "start": "npm run tsc && npm run webpack && npm run webpack:w",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
-    "postinstall": "typings install",
+    "start": "npm run webpack-dev-server",
+    "build": "npm install && npm run postinstall && npm run rimraf && npm run webpack-production",
     "typings": "typings",
+    "postinstall": "npm run typings install",
+    "heroku-postbuild": "npm run webpack-production",
     "webpack": "webpack",
-    "webpack:w": "webpack --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "webpack-production": "webpack --config config/webpack.prod.js --progress --profile --bail",
+    "rimraf": "rimraf dist",
+    "webpack-dev-server": "webpack-dev-server --inline --progress --port 3000 --hot --host 0.0.0.0"
   },
   "repository": {
     "type": "git",
@@ -24,15 +25,35 @@
   },
   "homepage": "https://github.com/pyriter/project-init",
   "dependencies": {
-    "jquery": "^2.2.4"
+    "@angular/common": "^2.x",
+    "@angular/compiler": "^2.x",
+    "@angular/core": "^2.x",
+    "@angular/http": "^2.x",
+    "@angular/platform-browser": "^2.x",
+    "@angular/platform-browser-dynamic": "^2.x",
+    "@angular/router": "^3.x",
+    "core-js": "^2.x",
+    "css-loader": "^0.x",
+    "extract-text-webpack-plugin": "^1.x",
+    "file-loader": "^0.x",
+    "html-loader": "^0.x",
+    "html-webpack-plugin": "^2.x",
+    "null-loader": "^0.x",
+    "raw-loader": "^0.x",
+    "reflect-metadata": "^0.x",
+    "rimraf": "^2.x",
+    "rxjs": "5.0.0-beta.12",
+    "style-loader": "^0.x",
+    "ts-loader": "^0.x",
+    "tslint": "^3.15.1",
+    "tslint-loader": "^2.1.5",
+    "typescript": "^2.x",
+    "typings": "^1.x",
+    "webpack": "^1.x",
+    "webpack-merge": "^0.x",
+    "zone.js": "^0.x"
   },
   "devDependencies": {
-    "browser-sync": "^2.12.10",
-    "browser-sync-webpack-plugin": "^1.0.1",
-    "css-loader": "^0.23.1",
-    "ts-loader": "^0.8.2",
-    "typescript": "^1.8.10",
-    "typings": "^1.0.4",
-    "webpack": "^1.13.1"
+    "webpack-dev-server": "^1.14.1"
   }
 }
